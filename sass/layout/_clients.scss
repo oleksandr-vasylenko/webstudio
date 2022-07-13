@@ -1,0 +1,44 @@
+.clients__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.clients__item {
+  height: 92px;
+  width: calc((100% - 30px) / 2);
+
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 60px) / 3);
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: calc((100% - 150px) / 6);
+  }
+}
+
+.client__link {
+  @include flexCenter;
+
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+
+  transition: border var(--speed) var(--duration);
+
+  &:hover,
+  &:focus {
+    border: 1px solid var(--accent);
+  }
+}
+
+.clients__logo {
+  fill: #afb1b8;
+  transition: fill var(--speed) var(--duration);
+
+  .client__link:hover &,
+  .client__link:focus & {
+    fill: var(--accent);
+  }
+}

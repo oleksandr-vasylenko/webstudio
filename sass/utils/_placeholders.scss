@@ -1,0 +1,32 @@
+%main-title {
+  margin-bottom: 30px;
+
+  font-size: 28px;
+  line-height: 1.18;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: var(--secondary-text);
+
+  @media screen and (min-width: 1200px) {
+    font-size: 36px;
+    line-height: 1.17;
+    margin-bottom: 50px;
+  }
+}
+
+%footer-title {
+  color: var(--white-text);
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+%social {
+  @include flexCenter();
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+}

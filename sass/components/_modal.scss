@@ -1,0 +1,266 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 93px;
+  padding-right: 15px;
+  padding-left: 15px;
+  overflow-y: scroll;
+  z-index: 3;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+
+  transition: opacity var(--speed) var(--duration);
+
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+
+    .modal {
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+  }
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  padding: 40px;
+  // margin: 0 auto;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+
+  background-color: var(--white-text);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  transition: transform var(--speed) var(--duration);
+
+  @media screen and (max-width: 1199px) {
+    max-width: 450px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 528px;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  padding: 0;
+  @include flexCenter;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  fill: #000000;
+  background-color: var(--white-text);
+  cursor: pointer;
+
+  transition: fill var(--speed) var(--duration),
+    box-shadow var(--speed) var(--duration);
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    fill: var(--accent);
+  }
+}
+
+.modal__btn {
+  width: 200px;
+  height: 50px;
+  left: 700px;
+  top: 712px;
+  display: block;
+  align-self: center;
+
+  background-color: var(--accent);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  color: var(--white-text);
+
+  transition: background-color var(--speed) var(--duration);
+
+  &:hover,
+  &:focus {
+    background-color: #188ce8;
+  }
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__title {
+  margin-bottom: 12px;
+
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--secondary-text);
+}
+
+.modal__field:not(:last-child) {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.modal__label {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+
+  color: var(--main-text);
+}
+
+.modal__input {
+  padding-left: 35px; /* need to confirm this padding - it is not specified in the instructions */
+  padding-right: 15px;
+  display: block;
+
+  height: 40px;
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  color: var(
+    --secondary-text
+  ); /* need to confirm this padding - it is not specified in the instructions */
+  outline: none;
+
+  transition: border-color var(--speed) var(--duration);
+
+  &:focus {
+    border: 1px solid var(--accent);
+  }
+
+  &:focus + .modal__icon {
+    fill: var(--accent);
+  }
+
+  &.textarea {
+    height: 120px;
+    padding: 12px;
+    resize: none;
+  }
+}
+
+.modal__block {
+  position: relative;
+  margin-top: 4px;
+}
+
+.modal__icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: fill var(--speed) var(--duration);
+}
+
+.modal__field .textarea::placeholder {
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal__agree {
+  @include flexCenter(flex, center, null);
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+
+  @media screen and (min-width: 1200px) {
+    margin-left: 12px;
+    font-size: 14px;
+  }
+}
+
+.modal__agree-label {
+  position: relative;
+  // flex-wrap: wrap;
+  gap: 5px 0px;
+  @include flexCenter(flex, center, null);
+}
+
+.modal__agree-link {
+  color: var(--accent);
+  text-decoration: underline;
+
+  transition: text-decoration var(--speed) var(--duration);
+
+  &:hover,
+  &:focus {
+    text-decoration-color: transparent;
+  }
+}
+
+.modal__icon-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  margin-right: 8px;
+  opacity: 1;
+  flex-shrink: 0;
+
+  transition: fill var(--speed) var(--duration),
+    box-shadow var(--speed) var(--duration),
+    opacity var(--speed) var(--duration);
+
+  .modal__checkbox:hover + & {
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.15);
+  }
+
+  .modal__checkbox:focus + & {
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    fill: var(--accent);
+  }
+
+  .modal__checkbox:checked + & {
+    opacity: 0;
+  }
+}
+
+.modal__icon-checked {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-right: 8px;
+  opacity: 0;
+  flex-shrink: 0;
+
+  transition: opacity var(--speed) var(--duration);
+
+  .modal__checkbox:checked ~ & {
+    opacity: 1;
+  }
+}
+
+.modal__agree-text {
+  margin-left: 24px;
+  transform: translateY(1px);
+}

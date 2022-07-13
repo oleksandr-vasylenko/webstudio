@@ -1,0 +1,10 @@
+.services__title,
+.team__title,
+.clients__title {
+  @extend %main-title;
+}
+
+.join-social__title,
+.subscription__title {
+  @extend %footer-title;
+}

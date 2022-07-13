@@ -1,0 +1,11 @@
+.logo {
+  @include logoColor();
+}
+
+.logo__text--black {
+  @include logoColor(var(--secondary-text));
+}
+
+.logo__text--white {
+  @include logoColor(var(--white-text));
+}

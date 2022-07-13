@@ -1,0 +1,75 @@
+html {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.page {
+  background-color: #ffffff;
+  color: var(--main-text);
+  font-family: $fontPrimary;
+  // width: fit-content;
+
+  @media screen and (min-width: 1200px) {
+    & {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  padding: 60px 15px;
+  margin: 0 auto;
+  width: 100%;
+
+  // margin-left: auto;
+  // margin-right: auto;
+
+  @media screen and (min-width: 480px) {
+    max-width: 480px;
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 1200px;
+    padding: 94px 15px;
+  }
+}

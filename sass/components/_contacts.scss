@@ -1,0 +1,120 @@
+.header__contacts {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column-reverse;
+    gap: 32px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-left: 84px;
+    gap: 10px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-left: 305px;
+    gap: 30px;
+    flex-direction: row;
+  }
+
+  @media screen and (max-width: 360px) {
+    gap: 16px;
+  }
+}
+
+.contacts__link {
+  font-weight: 500;
+  color: var(--main-text);
+  letter-spacing: 0.02em;
+
+  transition: color var(--speed) var(--duration);
+
+  &:hover,
+  &:focus {
+    color: var(--accent);
+  }
+
+  @media screen and (max-width: 767px) {
+    color: var(--accent);
+    font-size: 34px;
+    line-height: 1.18;
+  }
+
+  @media screen and (max-width: 376px) {
+    font-size: 26px;
+    line-height: 1.18;
+  }
+
+  @media screen and (max-width: 767px) {
+    &--mail-grey {
+      font-size: 24px;
+      line-height: 1.17;
+      letter-spacing: 0.02em;
+      color: var(--main-text);
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+  }
+}
+
+.contacts__icon {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+  fill: currentColor;
+  margin-right: 10px;
+}
+
+.footer__connect {
+  margin-right: auto;
+
+  @media screen and (max-width: 1199px) {
+    margin-bottom: 60px;
+    text-align: center;
+  }
+}
+
+.footer__contacts {
+  margin-top: 8px;
+
+  // @media screen and (mix-width: 768px) and (max-width: 1199px) {
+  //   padding-left: revert;
+  // }
+}
+
+.footer__contacts .contacts__item--footer + .contacts__item--footer {
+  margin-top: 8px;
+}
+
+.contacts__link--footer {
+  color: rgba(255, 255, 255, 0.6);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  transition: color var(--speed) var(--duration);
+
+  &:hover,
+  &:focus {
+    color: var(--accent);
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    display: block;
+  }
+}

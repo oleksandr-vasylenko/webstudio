@@ -1,0 +1,35 @@
+.footer__container {
+  @media screen and (min-width: 768px) {
+    padding-left: 76px;
+    padding-right: 89px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex-wrap: wrap;
+    padding: 60px 15px;
+    align-items: baseline;
+  }
+}
+
+.footer {
+  background-color: #2f303a;
+
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+}
+
+.address {
+  margin-top: 20px;
+}
+
+.addresss__text {
+  color: var(--white-text);
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}

@@ -1,0 +1,39 @@
+.member-social {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+
+  @media screen and (min-width: 1200px) {
+    gap: 10px;
+  }
+}
+
+.member-social__link {
+  color: var(--grey-social);
+
+  transition: background-color var(--speed) var(--duration),
+    color var(--speed) var(--duration);
+
+  &:hover,
+  &:focus {
+    color: var(--accent);
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include flexCenter();
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+
+    &:hover,
+    &:focus {
+      background-color: var(--accent);
+      color: var(--white-text);
+    }
+  }
+}
+
+.member-social__icon {
+  display: flex;
+  fill: currentColor;
+}
